@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+            integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="apiclient.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <h1>Publicar registro</h1>
+    <form>
+        <label for="postName">Message:</label><br>
+        <input type="text" id="postName" name="name" value="John"><br><br>
+        <input type="button" value="Submit" onclick="app.post($('#postName').val())">
+    </form>
+
+    <div id="postrespmsg"></div>
+    <h1>Obtener registros</h1>
+    <form>
+        <input type="button" value="Submit" onclick="app.get()">
+    </form>
+
+    <table id= "data">
+        <thead>
+            <th>Message</th>
+            <th>Hora</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>
