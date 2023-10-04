@@ -1,4 +1,4 @@
-package org.example;
+package org.example.logservices;
 
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
@@ -26,7 +26,7 @@ public class MongoConnection {
         try {
             mongoDatabase = new MongoClient(new ServerAddress(address)).getDatabase(databaseName);
         } catch (Exception e) {
-            System.out.println("No se pudo conectar a base de datos");
+            System.out.println("No se pudo conectar a la base de datos");
         }
     }
 

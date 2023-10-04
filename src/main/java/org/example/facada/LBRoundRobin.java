@@ -1,4 +1,4 @@
-package org.example;
+package org.example.facada;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -58,20 +58,11 @@ public class LBRoundRobin {
             con.setRequestMethod("POST");
             con.setDoInput(true);
             con.setDoOutput(true);
-
-            // Set request headers as needed (e.g., Content-Type)
             con.setRequestProperty("Content-Type", "application/json");
-
-            // Define the POST data (JSON body) to send
-            String postData = object;
-
-            // Write the POST data to the connection
             try (DataOutputStream dataOutputStream = new DataOutputStream(con.getOutputStream())) {
-                dataOutputStream.writeBytes(postData);
+                dataOutputStream.writeBytes(object);
                 dataOutputStream.flush();
             }
-
-            // Get the response code (e.g., 200 for success)
             int responseCode = con.getResponseCode();
 
             if (responseCode == HttpURLConnection.HTTP_OK) {
